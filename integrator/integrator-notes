@@ -1,0 +1,72 @@
+
+*********************************************************************
+STORMER INTEGRATION
+*********************************************************************
+
+Construction by the process of successive refinement (instead of writing linearly, we write by refinement !?)
+
+Evolver {
+    Extends the history by multiple steps
+}
+
+Stepper {
+    Advances the history by a step
+    __________________________________________________________
+    
+    Return 
+    Lambda history: 
+        Extend the history using - old history, new t-value, new x-value
+    __________________________________________________________
+
+    Unbound terms
+    
+    New t-value: h 
+    New x-value: The integrator is needed
+     
+}
+
+Integrator {
+    Uses the history to compute the new state 
+    __________________________________________________________
+           
+    Return 
+    Lambda history: 
+        Get the previous x, t values from the history
+        Use Stormer's integration to find the new value of x
+        Return it
+    __________________________________________________________
+        
+    Stormers Integration: F, h, history of x-values, history of t-values
+}
+
+Evolver {
+    Will advance the history by several steps
+    __________________________________________________________
+
+    Return 
+    Lambda history steps: 
+        Use the stepper to advance many steps 
+        Return the history
+    __________________________________________________________
+
+    Use the stepper: 
+        Stepper: 
+            h
+            Integrator: 
+                make-integrator
+                    F, h
+}
+
+Make intitial history {
+    We need to make a history containing (t0, x0), (t1, x1) (t2, x2) 
+    __________________________________________________________
+
+    We only need
+        initial time, step size
+        intial x values
+
+}
+
+
+
+

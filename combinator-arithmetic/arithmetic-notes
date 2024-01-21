@@ -1,0 +1,85 @@
+
+Some things to remember and correct
+    1) Don't forget to break up complex functions into simpler ones
+
+    2) You aren't always clear about what the purpose of a procedure is. This needs to be fixed
+
+    3) Write one simple general entity interface (the abstract arithmetic)
+       Then write combinator languages for composing those entities (the different extenders we made for arithmetics)
+
+
+*******************************************************************
+WHAT ARE WE MAKING?
+*******************************************************************
+
+We are making a combinator language for arithmetics.
+
+*******************************************************************
+WHAT IS OUR INTERFACE FOR AN ARITHMETIC?
+*******************************************************************
+
+The important properties of an arithmetic
+1) The base arithmetics that it is defined from
+2) The opname -> operation mapping
+
+The other important property 
+1) The constant symbol -> value mapping
+
+Some extra additional properties (for usefuless)
+1) Name of the arithmetic
+2) Domain predicate
+
+
+*******************************************************************
+WHAT IS AN OPERATION
+*******************************************************************
+
+An operation has these 3 properties
+1) A name
+2) An applicability
+3) A procedure to apply if applicable
+
+The applicability is not there for error checking
+It is used for combining arithmetics
+
+*******************************************************************
+WHAT IS INSTALLATION
+*******************************************************************
+
+The process of modifying the operator -> value bindings in the interaction environment
+
+In our implementation, we also parse, while resolving
+
+*******************************************************************
+WHAT IS A SYMBOLIC EXTENSION OF AN ARITHMETIC
+*******************************************************************
+
+The symbolic extension of an arithmetic is the same arithmetic, except that it is with symbols now. Only symbols, no literals at all.
+
+Note that this is different from the arithmetic which is a mix of the symbolic and base arithmetic. That is the disjunction of both of them.
+
+However, because we plan to mix the arithmetics later, we will cleverly restrict only the domain predicate and not the applicability of the operations.
+
+*******************************************************************
+WHAT IS A DISJUNCTION OF ARITHMETICS
+*******************************************************************
+
+Disjunction means disjoint union. 
+
+Ideally, we would expect all the constants and the applicabilities to be disjoint.
+
+At the same time, the arithmetics should be compatible i.e they should be defined on the same operations.
+
+Then, it is not too hard to imagine the disjoint union of those arithmetics.
+
+*******************************************************************
+WHAT IS A FUNCTION ARITHMETIC?
+*******************************************************************
+
+What is a function arithmetic?
+
+A function arithmetic is built from a base arithmetic, that of the codomain of the function.
+
+*******************************************************************
+
+
